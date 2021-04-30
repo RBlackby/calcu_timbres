@@ -6,6 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
         <title>Calculador de timbres con boleta</title>
         <link rel="stylesheet" href="./style.css">
+        <style>
+            .titulo {
+                color: red;
+                font-size: 35px;
+            }
+
+            .tama{
+                font-size: 30px;
+            }
+        </style>
     </head>
     <body>
         <p class="opt-description">Introduzca el monto con boleta incluida</p>
@@ -13,7 +23,7 @@
             <input class="opt-btn" type="button" value="Calcular" id="extraer"/>
             <input class="opt-btn" type="button" value="Borrar" id="borrar"/>
         </p>
-        <input class="opt-number" type="number" id="dinero" />
+        <input class="opt-number tama" type="number" id="dinero" maxlength="7" size="7" required/>
         <p id="resultado"></p>
         <script src="cajero.js"></script>
     </body>

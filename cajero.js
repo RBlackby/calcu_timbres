@@ -12,12 +12,22 @@ class Billete {
 }
 const boleta = 3850;
 
-function entregarDinero() { // funcion disparada al hacer click a extraer
+function entregarDinero() { 
+  
+  
+  
+  // funcion disparada al hacer click a extraer
   resultado.innerHTML = "";
   entregado = [];
   var t = document.getElementById("dinero"); // el valor q ingreso en el input de lo q quiero retirar
   dinero = parseInt(t.value); // convierto ese string a numero entero
-  
+ 
+
+  if(isNaN(dinero) || dinero < boleta){
+    resultado.innerHTML = "<b class='titulo'>Debes escribir el monto MAYOR al precio de la boleta</b>";
+    return;
+  }
+
   dinero = dinero - boleta;
 
   for (const bi of caja) { // itera los billetes de la caja (recorro los elem de caja)
@@ -40,11 +50,11 @@ function entregarDinero() { // funcion disparada al hacer click a extraer
 }
 
 function mostrarBilletes() {
-  resultado.innerHTML += "1 boleta de 3850";
+  resultado.innerHTML += "<b class='titulo'>1</b> boleta de <b class='titulo'>3850</b>";
   resultado.innerHTML += '<br />'
   for (const e of entregado) { //recorro cada instancia de e (entregado)
     if (e.cantidad > 0) { // para que no me muestre cero billetes de x denominacion
-      resultado.innerHTML += e.cantidad + " Timbre de ";
+      resultado.innerHTML += "<b class='titulo'>" + e.cantidad + "</b> Timbre de ";
       resultado.appendChild(e.imagen)
       resultado.innerHTML += '<br />'
     }
@@ -58,6 +68,7 @@ document.getElementById('borrar').onclick = function borra() {
   //Esta funciona hace que cuando apretas el boton "Borrar" se borra el resultado y billetes entregados
   resultado.innerHTML = "";
   entregado = [];
+  document.getElementById("dinero").focus();
 }
 
 var imagenes = {};
