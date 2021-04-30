@@ -92,5 +92,13 @@ var resultado = document.getElementById("resultado");  // la etiqueta p q creamo
 var b = document.getElementById("extraer"); // boton de retirar
 b.addEventListener("click", entregarDinero);
 
+document.getElementById('limpiar').onclick = function borra() {
+  //Esta funciona hace que cuando apretas el boton "Borrar" se borra el resultado y billetes entregados
+  resultado.innerHTML = "";
+  entregado = [];
+  document.getElementById("dinero").value = "";
+  document.getElementById("dinero").focus();
+}
+
 
 

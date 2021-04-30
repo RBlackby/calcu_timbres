@@ -44,6 +44,11 @@ body {
   width: 5em;
   font-size: 1.4em;
 }
+.opt-btn-l{
+  height: 2em;
+  width: 2em;
+  font-size: 1em;
+}
 .opt-description {
   /*margin-left: 1.6em;*/
   display: block;
